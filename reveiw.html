@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Sheenzy Beauty Store</title>
+ <style>
+ body{
+font-family: Arial;
+margin:0;
+background:#ffe6f2;
+}
+/* Navigation Menu */
+.navbar{
+background:#cc0066;
+padding:15px;
+text-align: center;
+}
+.navbar a{
+color: white;
+margin:15px;
+text-decoration: none;
+font-size:18px;
+font-weight: bold;
+}
+.navbar a:hover{
+text-decoration:underline;
+}
+/* Offer Banner */
+.offer-banner{
+background: red;
+color: white;
+padding:10px;
+font-size:20px;
+font-weight: bold;
+overflow: hidden;
+white-space: nowrap;
+}
+ .offer-text{
+display:inline-block;
+animation:move 10s linear infinite;
+}
+ @keyframes move{
+from{transform:translateX(100%);}
+to{transform:translateX(-100%);}
+}
+/* Product Card */
+.container{
+background:white;
+width:60%;
+margin:30px auto;
+padding:20px;
+border-radius:12px;
+box-shadow:0 0 10px gray;
+text-align:center;
+transition:0.3s;
+}
+.container:hover{
+transform: scale(1.02);
+}
+.price{
+color:red;
+font-size:22px;
+font-weight:bold;
+}
+.delivery{
+color:green;
+font-weight:bold;
+}
+button{
+background:#ff3399;
+color: white;
+padding:10px 20px;
+border: none;
+border-radius:25px;
+font-size:16px;
+cursor: pointer;
+transition:0.3s;
+}
+button:hover{
+background:#cc0066;
+}
+img{
+border-radius:10px;
+margin:10px 0;
+}
+/* Reviews */
+.review{
+background:#f9f9f9;
+margin:10px;
+padding:10px;
+border-radius:8px;
+}
+/* Form */
+form input, textarea, select{
+padding:8px;
+margin:5px;
+width:80%;
+border-radius:5px;
+border:1px solid #ccc;
+}
+.submit{
+background:#ff3399;
+color:white;
+border:none;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+}
+.submit:hover{
+background:#cc0066;
+}
+</style>
+</head>
+<body>
+<!-- Navigation Menu -->
+<div class="navbar">
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">Offers</a>
+<a href="#">Reviews</a>
+<a href="#">Contact</a>
+</div>
+<!-- Offer Banner -->
+<div class="offer-banner">
+<span class="offer-text">
+🔥 DHAMAKA OFFER 🔥 30% OFF on Sheenzy Lip Gloss | Free
+Delivery Available | Shop Now!
+</span>
+</div>
+<!-- Product Section -->
+<div class="container">
+<h1>✨ Sheenzy Lip Gloss ✨</h1>
+<!-- ✅ FIXED IMAGE PATH -->
+<img src="roject.png" width="250"
+height="200">
+<p class="price">Price: ₹499</p>
+<p class="delivery">🚚 Online Delivery Available Across India</p>
+<p>Get shiny, smooth and long-lasting lips with Sheenzy Lip Gloss.</p>
+<a href="buyy.html"
+style="text-decoration:none;">
+<button>Buy Now</button>
+</a>
+<hr>
+<h2>⭐ Customer Reviews</h2>
+<!-- Existing Reviews -->
+<div id="reviewSection">
+<div class="review">
+<b>Anureet ⭐⭐⭐⭐⭐</b>
+<p>Amazing shine! I love this product.</p>
+</div>
+<div class="review">
+<b>Rohini ⭐⭐⭐⭐</b>
+<p>Very smooth and beautiful color.</p>
+</div>
+<div class="review">
+<b>Yuvi ⭐⭐⭐⭐⭐</b>
+<p>Best lip gloss I have used!</p>
+</div>
+</div>
+<hr>
+<h2>Leave Your Review</h2>
+<!-- ✅ FORM UPDATED -->
+<form onsubmit="addReview(event)">
+<input type="text" id="name" placeholder="Your Name" required><br>
+<select id="rating">
+<option>⭐⭐⭐⭐⭐</option>
+<option>⭐⭐⭐⭐</option>
+<option>⭐⭐⭐</option>
+<option>⭐⭐</option>
+<option>⭐</option>
+</select><br>
+<textarea rows="4" id="message" placeholder="Write your review"
+required></textarea><br>
+<input type="submit" value="Submit Review" class="submit">
+</form>
+</div>
+<!-- ✅ JAVASCRIPT ADDED -->
+<script>
+function addReview(event){
+event.preventDefault();
+// Get values
+let name = document.getElementById("name").value;
+let rating = document.getElementById("rating").value;
+let message = document.getElementById("message").value;
+// Create new review
+let newReview = document.createElement("div");
+newReview.classList.add("review");
+newReview.innerHTML = "<b>" + name + " " + rating + "</b><p>" +
+message + "</p>";
+// Add to review section
+document.getElementById("reviewSection").appendChild(newReview);
+// Show message
+alert("Review submitted successfully!");
+// Clear form
+document.getElementById("name").value = "";
+document.getElementById("message").value = "";
+}
+function buyNow(){
+alert("Redirecting to payment page...");
+}</script>
+ </body>
+</html>
